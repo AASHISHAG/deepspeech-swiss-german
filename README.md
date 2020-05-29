@@ -50,6 +50,12 @@ $ docker run -d -it --name deepspeech_v0.6.0 --mount  type=bind,source="$(pwd)",
 $ docker exec -it deepspeech_v0.6.0 /bin/bash
 ```
 
+- Set the locale to en_US.UTF-8 if required:
+```
+$ dpkg-reconfigure locales
+$ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment <reference link>
+```
+
 ### Speech Corpus
 
 **1. _English_**
