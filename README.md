@@ -53,8 +53,8 @@ $ docker exec -it deepspeech_v0.6.0 /bin/bash
 ### Speech Corpus
 
 **1. _English_**
-* [LibriSpeech](http://www.openslr.org/12) ~1000h 
 * [Mozilla Common Voice](https://voice.mozilla.org/) ~1488h
+* [LibriSpeech](http://www.openslr.org/12) ~1000h 
 
 **2. _German_**
 * [Mozilla Common Voice](https://voice.mozilla.org/) ~454h
@@ -66,22 +66,25 @@ $ docker exec -it deepspeech_v0.6.0 /bin/bash
 * [ArchiMob](https://www.spur.uzh.ch/en/departments/research/textgroup/ArchiMob.html) ~57h
 * [SwissText](https://swisstext-and-konvens-2020.org/low-resource-speech-to-text/) ~70h
 
+
 - **Download and Prepare the Audio Data**
 
-**1. _LibriSpeech_**
-```
-$ mkdir librispeech
-$ cd librispeech
-$ ../DeepSpeech/bin/import_librivox.py . <change the path to DeepSpeech accordingly>
-```
-
-**2. _Mozilla_EN_**
+**1. _Mozilla_EN_**
 ```
 $ mkdir mozilla_en
 $ cd mozilla_en
-$ ./DeepSpeech/bin/import_librivox.py . <change the path to DeepSpeech accordingly>
+$ wget https://voice-prod-bundler-ee1969a6ce8178826482b88e843c335139bd3fb4.s3.amazonaws.com/cv-corpus-4-2019-12-10/en.tar.gz
+$ tar -xzvf en.tar.gz
+$ python3 DeepSpeech/bin/import_cv2.py --audio_dir $path --filter_alphabet $path/alphabet.txt $export_path <change the path accordingly>
 ```
- 
+
+**2. _LibriSpeech_**
+```
+$ mkdir librispeech
+$ cd librispeech
+$ ../DeepSpeech/bin/import_librivox.py $export_path <change the path accordingly>
+```
+
 **3. _Voxforge_**
 ```
 $ cd ..
