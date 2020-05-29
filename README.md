@@ -133,6 +133,7 @@ $ python3 deepspeech-swiss-german/prepare_data.py --voxforge corpus_path export_
 
 **7. _SwissText_DE_**
 ```
+$ https://drive.switch.ch/index.php/s/PpUArRmN5Ba5C8J <download link>
 ```
 
 **8. _ArchiMob_DE_**
