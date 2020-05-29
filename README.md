@@ -75,14 +75,23 @@ $ mkdir mozilla_en
 $ cd mozilla_en
 $ wget https://voice-prod-bundler-ee1969a6ce8178826482b88e843c335139bd3fb4.s3.amazonaws.com/cv-corpus-4-2019-12-10/en.tar.gz
 $ tar -xzvf en.tar.gz
-$ python3 DeepSpeech/bin/import_cv2.py --audio_dir $path --filter_alphabet $path/alphabet.txt $export_path <change the path accordingly>
+$ python3 DeepSpeech/bin/import_cv2.py --audio_dir path --filter_alphabet deepspeech-swiss-german/data/en_alphabet.txt export_path <change the path accordingly>
 ```
 
-**2. _LibriSpeech_**
+**2. _LibriSpeech_EN_**
 ```
 $ mkdir librispeech
 $ cd librispeech
 $ ../DeepSpeech/bin/import_librivox.py $export_path <change the path accordingly>
+```
+
+**3. _Mozilla_DE_**
+```
+$ mkdir mozilla_de
+$ cd mozilla_de
+$ wget https://voice-prod-bundler-ee1969a6ce8178826482b88e843c335139bd3fb4.s3.amazonaws.com/cv-corpus-4-2019-12-10/de.tar.gz
+$ tar -xzvf de.tar.gz
+$ python3 DeepSpeech/bin/import_cv2.py --audio_dir path --filter_alphabet deepspeech-swiss-german/data/de_alphabet.txt $export_path <change the path accordingly>
 ```
 
 **3. _Voxforge_**
