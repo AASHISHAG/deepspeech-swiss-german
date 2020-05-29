@@ -213,7 +213,50 @@ $ DeepSpeech/native_client/generate_trie deepspeech-swiss-german/data/de_alphabe
 ```
 
 
+### Training
 
+Define the path of the corpus and the hyperparameters in _deepspeech-german/train_model.sh_ file.
+
+```
+$ nohup deepspeech-german/train_model.sh &
+```
+
+
+### Results
+
+Some results from our findings.
+
+- Mozilla 79.7%
+- Voxforge 72.1%
+- Tuda-De 26.8%
+- Tuda-De+Mozilla 57.3%
+- Tuda-De+Voxforge 15.1%
+- Tuda-De+Voxforge+Mozilla 21.5%
+
+_NOTE: Refer our paper for more information._
+
+### Transfer Learning
+
+**1. _German to German_**
+
+- Specify the checkpoint directory in [trasfer_model.sh](https://github.com/AASHISHAG/deepspeech-german/blob/master/transfer_model.sh)
+
+```
+$ nohup deepspeech-german/trasfer_model.sh & 
+```
+
+**2. _English to German_**
+
+- Change all umlauts characters ä,ö,ü,ß to ae, oe, ue, ss
+- Re-build Language Model, Trie and Corpus
+
+- Specify the checkpoint directory in [trasfer_model.sh](https://github.com/AASHISHAG/deepspeech-german/blob/master/transfer_model.sh)
+
+```
+$ nohup deepspeech-german/trasfer_model.sh & 
+```
+
+_NOTE: The checkpoints should be from the same version to perform Transfer Learning_
 
 
 
