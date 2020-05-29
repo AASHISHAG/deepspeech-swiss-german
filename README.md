@@ -130,10 +130,14 @@ dl.download(voxforge_corpus_path)
 $ deepspeech-swiss-german/pre-processing/run_to_utf_8.sh
 $ python3 deepspeech-swiss-german/prepare_data.py --voxforge corpus_path export_path <change the path accordingly>
 ```
+_NOTE: Change the path accordingly in run_to_utf_8.sh_
 
 **7. _SwissText_DE_**
 ```
+$ mkdir swisstext
+$ cd swisstext
 $ https://drive.switch.ch/index.php/s/PpUArRmN5Ba5C8J <download link>
+$ python3 deepspeech-swiss-german
 ```
 
 **8. _ArchiMob_DE_**
@@ -142,14 +146,71 @@ $ https://drive.switch.ch/index.php/s/PpUArRmN5Ba5C8J <download link>
 $ https://github.com/AASHISHAG/archimob-swissgerman-deepspeech-importer
 ```
 
+### Language Model
 
+We used [KenLM](https://github.com/kpu/kenlm.git) toolkit to train a 3-gram language model. It is Language Model inference code by [Kenneth Heafield](https://kheafield.com/)
 
+- **Installation**
 
+```
+$ git clone https://github.com/kpu/kenlm.git
+$ cd kenlm
+$ mkdir -p build
+$ cd build
+$ cmake ..
+$ make -j `nproc`
+```
 
+- **Corpus**
 
+We used an open-source [German Speech Corpus](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz) released by [University of Hamburg](https://www.inf.uni-hamburg.de/en/inst/ab/lt/resources/data/acoustic-models.html) and [European Parliament Proceedings Parallel Corpus 1996-2011](https://www.statmt.org/europarl/)
 
+1. Download the data (EN, DE)
 
+```
+##EN
 
+## DE
+$ wget http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz
+$ gzip -d German_sentences_8mil_filtered_maryfied.txt.gz
+$ wget https://www.statmt.org/europarl/v7/de-en.tgz
+$ gzip -d German_sentences_8mil_filtered_maryfied.txt.gz
+```
+
+2. Pre-process the data (EN, DE)
+
+```
+##EN
+
+## DE
+$ deepspeech-german/pre-processing/prepare_vocab.py $text_corpus_path $exp_path/clean_vocab.txt
+```
+
+3. Build the Language Model (EN, DE)
+```
+##EN
+
+## DE
+$kenlm/build/bin/lmplz --text $exp_path/clean_vocab.txt --arpa $exp_path/words.arpa --o 3
+$kenlm/build/bin/build_binary -T -s $exp_path/words.arpa $exp_path/lm.binary
+```
+
+#### NOTE: use [-S](https://kheafield.com/code/kenlm/estimation/) memoryuse_in_%, if malloc expection occurs
+Example:
+```
+##EN
+
+## DE
+$kenlm/build/bin/lmplz --text $exp_path/clean_vocab.txt --arpa $exp_path/words.arpa --o 3 -S 50%
+```
+
+4. Build Trie (EN, DE)
+```
+##EN
+
+## DE
+$ DeepSpeech/native_client/generate_trie deepspeech-swiss-german/data/de_alphabet.txt path/lm.binary export_path/trie
+```
 
 
 
