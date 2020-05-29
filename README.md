@@ -52,15 +52,19 @@ $ docker exec -it deepspeech_v0.6.0 /bin/bash
 
 ### Speech Corpus
 
-* [Librivox]
-* [Mozilla Common Voice](https://voice.mozilla.org/)
+**1. _English_**
+* [LibriSpeech](http://www.openslr.org/12) ~1000h 
+* [Mozilla Common Voice](https://voice.mozilla.org/) ~1488h
 
-* [Mozilla Common Voice](https://voice.mozilla.org/) ~140h
-* [German Distant Speech Corpus (TUDA-De)](https://www.inf.uni-hamburg.de/en/inst/ab/lt/resources/data/acoustic-models.html) ~127h
-* [Voxforge](http://www.voxforge.org/home/forums/other-languages/german/open-speech-data-corpus-for-german) ~35h
+**1. _German_**
+* [Mozilla Common Voice](https://voice.mozilla.org/) ~454h
+* [Mailabs](https://www.caito.de/2019/01/the-m-ailabs-speech-dataset/) ~233h
+* [German Distant Speech Corpus (TUDA-De)](https://www.inf.uni-hamburg.de/en/inst/ab/lt/resources/data/acoustic-models.html) ~184h
+* [Voxforge](http://www.voxforge.org/home/forums/other-languages/german/open-speech-data-corpus-for-german) ~57h
 
-* [ArchiMob]
-* [SwissText]
+**1. _Swiss-German_**
+* [ArchiMob](https://www.spur.uzh.ch/en/departments/research/textgroup/ArchiMob.html) ~57h
+* [SwissText](https://swisstext-and-konvens-2020.org/low-resource-speech-to-text/) ~70h
 
 https://github.com/AASHISHAG/archimob-swissgerman-deepspeech-importer
 
