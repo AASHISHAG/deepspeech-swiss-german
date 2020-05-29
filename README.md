@@ -56,15 +56,64 @@ $ docker exec -it deepspeech_v0.6.0 /bin/bash
 * [LibriSpeech](http://www.openslr.org/12) ~1000h 
 * [Mozilla Common Voice](https://voice.mozilla.org/) ~1488h
 
-**1. _German_**
+**2. _German_**
 * [Mozilla Common Voice](https://voice.mozilla.org/) ~454h
 * [Mailabs](https://www.caito.de/2019/01/the-m-ailabs-speech-dataset/) ~233h
 * [German Distant Speech Corpus (TUDA-De)](https://www.inf.uni-hamburg.de/en/inst/ab/lt/resources/data/acoustic-models.html) ~184h
 * [Voxforge](http://www.voxforge.org/home/forums/other-languages/german/open-speech-data-corpus-for-german) ~57h
 
-**1. _Swiss-German_**
+**3. _Swiss-German_**
 * [ArchiMob](https://www.spur.uzh.ch/en/departments/research/textgroup/ArchiMob.html) ~57h
 * [SwissText](https://swisstext-and-konvens-2020.org/low-resource-speech-to-text/) ~70h
+
+- **Download and Prepare the Audio Data**
+
+**1. _LibriSpeech_**
+```
+$ mkdir librispeech
+$ cd librispeech
+$ ../DeepSpeech/bin/import_librivox.py . <change the path to DeepSpeech accordingly>
+```
+
+**2. _Mozilla_EN_**
+```
+$ mkdir mozilla_en
+$ cd mozilla_en
+$ ./DeepSpeech/bin/import_librivox.py . <change the path to DeepSpeech accordingly>
+```
+ 
+**3. _Voxforge_**
+```
+$ cd ..
+$ mkdir voxforge
+$ cd voxforge
+```
+
+```python
+from audiomate.corpus import io
+dl = io.VoxforgeDownloader(lang='de')
+dl.download(voxforge_corpus_path)
+```
+
+
+```
+$ cd ..
+$ ##Tuda-De
+$ git clone https://github.com/AASHISHAG/deepspeech-german.git
+$ deepspeech-german/pre-processing/prepare_data.py --tuda $tuda_corpus_path  $export_path_data_tuda
+
+$ ##Voxforge
+$ deepspeech-german/pre-processing/run_to_utf_8.sh
+$ python3 deepspeech-german/prepare_data.py --voxforge $voxforge_corpus_path $export_path_data_voxforge
+
+$ ##Mozilla Common Voice
+$ python3 DeepSpeech/bin/import_cv2.py --filter_alphabet deepspeech-german/data/alphabet.txt $export_path_data_mozilla
+```
+
+
+
+
+
 
 https://github.com/AASHISHAG/archimob-swissgerman-deepspeech-importer
 
