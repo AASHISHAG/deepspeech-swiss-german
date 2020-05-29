@@ -95,8 +95,18 @@ $ python3 DeepSpeech/bin/import_cv2.py --audio_dir path --filter_alphabet deepsp
 ```
 
 **4. _Mailabs_DE_**
+```
+```
 
 **5. _Tuda_DE_**
+```
+$ cd ..
+$ mkdir tuda
+$ cd tuda
+$ wget http://www.repository.voxforge1.org/downloads/de/german-speechdata-package-v2.tar.gz
+$ tar -xzvf german-speechdata-package-v2.tar.gz
+$ deepspeech-swiss-german/pre-processing/prepare_data.py --tuda corpus_path  export_path
+```
 
 **6. _Voxforge_DE_**
 ```
@@ -111,29 +121,32 @@ dl.download(voxforge_corpus_path)
 ```
 ```
 $ deepspeech-german/pre-processing/run_to_utf_8.sh
-$ python3 deepspeech-german/prepare_data.py --voxforge corpus_path export_path <change the path accordingly>
+$ python3 deepspeech-swiss-german/prepare_data.py --voxforge corpus_path export_path <change the path accordingly>
+```
+
+**7. _SwissText_DE_**
+```
+```
+
+**8. _ArchiMob_DE_**
+- Follow steps at:
+```
+$ https://github.com/AASHISHAG/archimob-swissgerman-deepspeech-importer
 ```
 
 
 
-```
-$ cd ..
-$ ##Tuda-De
-$ git clone https://github.com/AASHISHAG/deepspeech-german.git
-$ deepspeech-german/pre-processing/prepare_data.py --tuda $tuda_corpus_path  $export_path_data_tuda
-
-$ ##Voxforge
-
-$ ##Mozilla Common Voice
-$ python3 DeepSpeech/bin/import_cv2.py --filter_alphabet deepspeech-german/data/alphabet.txt $export_path_data_mozilla
-```
 
 
 
 
 
 
-https://github.com/AASHISHAG/archimob-swissgerman-deepspeech-importer
+
+
+
+
+
 
 ## Acknowledgments
 * [Prof. Dr.-Ing. Torsten Zesch](https://www.ltl.uni-due.de/team/torsten-zesch) - Co-Author
