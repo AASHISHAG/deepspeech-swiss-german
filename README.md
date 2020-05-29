@@ -43,9 +43,22 @@ pip3 install -r python_requirements.txt
 
 ```
 $ git clone https://github.com/mozilla/DeepSpeech.git
-$ cd DeepSpeech/
+$ cd DeepSpeech
 $ git checkout v0.6.0
 ```
+
+### Speech Corpus
+
+* [Librivox]
+* [Mozilla Common Voice](https://voice.mozilla.org/)
+
+* [Mozilla Common Voice](https://voice.mozilla.org/) ~140h
+* [German Distant Speech Corpus (TUDA-De)](https://www.inf.uni-hamburg.de/en/inst/ab/lt/resources/data/acoustic-models.html) ~127h
+* [Voxforge](http://www.voxforge.org/home/forums/other-languages/german/open-speech-data-corpus-for-german) ~35h
+
+* [ArchiMob]
+* [SwissText]
+
 https://github.com/AASHISHAG/archimob-swissgerman-deepspeech-importer
 
 ## Acknowledgments
