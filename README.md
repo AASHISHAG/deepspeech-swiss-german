@@ -53,7 +53,7 @@ $ docker exec -it deepspeech_v0.6.0 /bin/bash
 - Set the locale to en_US.UTF-8 if required:
 ```
 $ dpkg-reconfigure locales
-$ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment <reference link>
+$ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment <reference>
 ```
 
 ### Speech Corpus
@@ -102,6 +102,9 @@ $ python3 DeepSpeech/bin/import_cv2.py --audio_dir path --filter_alphabet deepsp
 
 **4. _Mailabs_DE_**
 ```
+$ mkdir mailabs
+$ cd mailabs
+$ python3 DeepSpeech/bin/import_m-ailabs.py --language de_DE --filter_alphabet deepspeech-swiss-german/data/de_alphabet.txt $export_path <change the path accordingly>
 ```
 
 **5. _Tuda_DE_**
