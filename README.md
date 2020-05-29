@@ -82,7 +82,7 @@ $ python3 DeepSpeech/bin/import_cv2.py --audio_dir path --filter_alphabet deepsp
 ```
 $ mkdir librispeech
 $ cd librispeech
-$ ../DeepSpeech/bin/import_librivox.py $export_path <change the path accordingly>
+$ python3 DeepSpeech/bin/import_librivox.py $export_path <change the path accordingly>
 ```
 
 **3. _Mozilla_DE_**
@@ -94,18 +94,26 @@ $ tar -xzvf de.tar.gz
 $ python3 DeepSpeech/bin/import_cv2.py --audio_dir path --filter_alphabet deepspeech-swiss-german/data/de_alphabet.txt $export_path <change the path accordingly>
 ```
 
-**3. _Voxforge_**
+**4. _Mailabs_DE_**
+
+**5. _Tuda_DE_**
+
+**6. _Voxforge_DE_**
 ```
 $ cd ..
 $ mkdir voxforge
 $ cd voxforge
 ```
-
 ```python
 from audiomate.corpus import io
 dl = io.VoxforgeDownloader(lang='de')
 dl.download(voxforge_corpus_path)
 ```
+```
+$ deepspeech-german/pre-processing/run_to_utf_8.sh
+$ python3 deepspeech-german/prepare_data.py --voxforge corpus_path export_path <change the path accordingly>
+```
+
 
 
 ```
@@ -115,8 +123,6 @@ $ git clone https://github.com/AASHISHAG/deepspeech-german.git
 $ deepspeech-german/pre-processing/prepare_data.py --tuda $tuda_corpus_path  $export_path_data_tuda
 
 $ ##Voxforge
-$ deepspeech-german/pre-processing/run_to_utf_8.sh
-$ python3 deepspeech-german/prepare_data.py --voxforge $voxforge_corpus_path $export_path_data_voxforge
 
 $ ##Mozilla Common Voice
 $ python3 DeepSpeech/bin/import_cv2.py --filter_alphabet deepspeech-german/data/alphabet.txt $export_path_data_mozilla
