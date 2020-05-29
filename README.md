@@ -45,6 +45,9 @@ pip3 install -r python_requirements.txt
 $ git clone https://github.com/mozilla/DeepSpeech.git
 $ cd DeepSpeech
 $ git checkout v0.6.0
+$ docker build -t deepspeech_v0.6.0 .
+$ docker run -d -it --name deepspeech_v0.6.0 --mount  type=bind,source="$(pwd)",target=/root deepspeech_v0.6.0
+$ docker exec -it deepspeech_v0.6.0 /bin/bash
 ```
 
 ### Speech Corpus
