@@ -23,11 +23,10 @@ This Readme is written for [DeepSpeech v0.6.0](https://github.com/mozilla/DeepSp
 2. [Speech Corpus](#speech-corpus)
 3. [Language Model](#language-model)
 4. [Training](#training)
-5. [Hyper-Paramter Optimization](#hyper-paramter-optimization)
-6. [Results](#results)
-7. [Trained Models](#trained-models)
-8. [Acknowledgments](#acknowledgments)
-9. [References](#references)
+5. [Results](#results)
+6. [Trained Models](#trained-models)
+7. [Acknowledgments](#acknowledgments)
+8. [References](#references)
 
 ### Requirements
 
