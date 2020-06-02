@@ -225,12 +225,7 @@ $ nohup deepspeech-german/train_model.sh &
 
 Some results from our findings.
 
-- Mozilla 79.7%
-- Voxforge 72.1%
-- Tuda-De 26.8%
-- Tuda-De+Mozilla 57.3%
-- Tuda-De+Voxforge 15.1%
-- Tuda-De+Voxforge+Mozilla 21.5%
+- 
 
 _NOTE: Refer our paper for more information._
 
