@@ -68,8 +68,8 @@ $ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment <reference>
 * [Voxforge](http://www.voxforge.org/home/forums/other-languages/german/open-speech-data-corpus-for-german) ~57h
 
 **3. _Swiss-German_**
-* [ArchiMob](https://www.spur.uzh.ch/en/departments/research/textgroup/ArchiMob.html) ~57h
 * [SwissText](https://swisstext-and-konvens-2020.org/low-resource-speech-to-text/) ~70h
+* [ArchiMob](https://www.spur.uzh.ch/en/departments/research/textgroup/ArchiMob.html) ~57h
 
 
 - **Download and Prepare the Audio Data**
