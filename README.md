@@ -141,6 +141,7 @@ $ python3 deepspeech-swiss-german
 ```
 
 **8. _ArchiMob_DE_**
+
 Follow steps at:
 ```
 $ https://github.com/AASHISHAG/archimob-swissgerman-deepspeech-importer
