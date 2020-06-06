@@ -96,14 +96,14 @@ $ mkdir mozilla_de
 $ cd mozilla_de
 $ wget https://voice-prod-bundler-ee1969a6ce8178826482b88e843c335139bd3fb4.s3.amazonaws.com/cv-corpus-4-2019-12-10/de.tar.gz
 $ tar -xzvf de.tar.gz
-$ python3 DeepSpeech/bin/import_cv2.py --audio_dir path --filter_alphabet deepspeech-swiss-german/data/de_alphabet.txt $export_path <change the path accordingly>
+$ python3 DeepSpeech/bin/import_cv2.py --audio_dir path --filter_alphabet deepspeech-swiss-german/data/de_alphabet.txt export_path <change the path accordingly>
 ```
 
 **4. _Mailabs_DE_**
 ```
 $ mkdir mailabs
 $ cd mailabs
-$ python3 DeepSpeech/bin/import_m-ailabs.py --language de_DE --filter_alphabet deepspeech-swiss-german/data/de_alphabet.txt $export_path <change the path accordingly>
+$ python3 DeepSpeech/bin/import_m-ailabs.py --language de_DE --filter_alphabet deepspeech-swiss-german/data/de_alphabet.txt export_path <change the path accordingly>
 ```
 
 **5. _Tuda_DE_**
@@ -112,7 +112,7 @@ $ mkdir tuda
 $ cd tuda
 $ wget http://www.repository.voxforge1.org/downloads/de/german-speechdata-package-v2.tar.gz
 $ tar -xzvf german-speechdata-package-v2.tar.gz
-$ deepspeech-swiss-german/pre-processing/prepare_data.py --tuda corpus_path  export_path
+$ deepspeech-swiss-german/pre-processing/prepare_data.py --tuda corpus_path export_path
 ```
 
 **6. _Voxforge_DE_**
