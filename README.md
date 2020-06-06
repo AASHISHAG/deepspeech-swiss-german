@@ -72,7 +72,7 @@ $ https://perlgeek.de/en/article/set-up-a-clean-utf8-environment <reference>
 * [ArchiMob](https://www.spur.uzh.ch/en/departments/research/textgroup/ArchiMob.html) ~57h
 
 
-- **Download and Prepare the Audio Data**
+### Download and Prepare the Audio Data
 
 **1. _Mozilla_EN_**
 ```
