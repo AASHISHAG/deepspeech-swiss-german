@@ -87,7 +87,7 @@ $ python3 DeepSpeech/bin/import_cv2.py --audio_dir path --filter_alphabet deepsp
 ```
 $ mkdir librispeech
 $ cd librispeech
-$ python3 DeepSpeech/bin/import_librivox.py $export_path <change the path accordingly>
+$ python3 DeepSpeech/bin/import_librivox.py export_path <change the path accordingly>
 ```
 
 **3. _Mozilla_DE_**
