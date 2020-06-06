@@ -121,9 +121,10 @@ $ mkdir voxforge
 $ cd voxforge
 ```
 ```python
-from audiomate.corpus import io
-dl = io.VoxforgeDownloader(lang='de')
-dl.download(voxforge_corpus_path)
+python3
+$ from audiomate.corpus import io
+$ dl = io.VoxforgeDownloader(lang='de')
+$ dl.download(voxforge_corpus_path)
 ```
 ```
 $ deepspeech-swiss-german/pre-processing/run_to_utf_8.sh
