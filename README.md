@@ -137,7 +137,9 @@ _NOTE: Change the path accordingly in run_to_utf_8.sh_
 $ mkdir swisstext
 $ cd swisstext
 $ https://drive.switch.ch/index.php/s/PpUArRmN5Ba5C8J <download link>
-$ python3 deepspeech-swiss-german
+$ unzip train.zip
+$ python3 deepspeech-swiss-german/prepare_data_swiss_german.py
+$ python3 deepspeech-swiss-german/shuffle_and_split.py
 ```
 
 **8. _ArchiMob_DE_**
