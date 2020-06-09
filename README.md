@@ -177,7 +177,7 @@ We used an open-source [German Speech Corpus](http://ltdata1.informatik.uni-hamb
 $ wget http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz
 $ gzip -d German_sentences_8mil_filtered_maryfied.txt.gz
 $ wget https://www.statmt.org/europarl/v7/de-en.tgz
-$ gzip -d German_sentences_8mil_filtered_maryfied.txt.gz
+$ tar -xzvf de-en.tgz
 ```
 
 2. Pre-process the data (EN, DE)
