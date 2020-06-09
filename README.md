@@ -144,7 +144,7 @@ $ python3 deepspeech-swiss-german/shuffle_and_split.py
 
 **8. _ArchiMob_DE_**
 
-Follow steps at:
+Follow steps [here](https://github.com/AASHISHAG/archimob-swissgerman-deepspeech-importer):
 ```
 $ https://github.com/AASHISHAG/archimob-swissgerman-deepspeech-importer
 ```
