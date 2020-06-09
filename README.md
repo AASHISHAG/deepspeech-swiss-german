@@ -185,13 +185,11 @@ $ cat German_sentences_8mil_filtered_maryfied.txt  >> europarl-v7.de-en.de
 2. Pre-process the data (DE)
 
 ```
-## DE
 $ deepspeech-german/pre-processing/prepare_vocab.py europarl-v7.de-en.de exp_path/clean_vocab.txt
 ```
 
 3. Build the Language Model (DE)
 ```
-## DE
 $ kenlm/build/bin/lmplz --text exp_path/clean_vocab.txt --arpa exp_path/words.arpa --o 3
 $ kenlm/build/bin/build_binary -T -s exp_path/words.arpa exp_path/de_lm.binary
 ```
@@ -199,14 +197,11 @@ $ kenlm/build/bin/build_binary -T -s exp_path/words.arpa exp_path/de_lm.binary
 #### NOTE: use [-S](https://kheafield.com/code/kenlm/estimation/) memoryuse_in_%, if malloc expection occurs
 Example:
 ```
-
-## DE
 $kenlm/build/bin/lmplz --text exp_path/clean_vocab.txt --arpa exp_path/words.arpa --o 3 -S 50%
 ```
 
 4. Build Trie (DE)
 ```
-## DE
 $ DeepSpeech/native_client/generate_trie deepspeech-swiss-german/data/alphabet.txt path/de_lm.binary export_path/de_trie
 ```
 
