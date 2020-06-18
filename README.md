@@ -24,9 +24,9 @@ This Readme is written for [DeepSpeech v0.6.0](https://github.com/mozilla/DeepSp
 3. [Language Model](#language-model)
 4. [Training](#training)
 5. [Results](#results)
-6. [Trained Models](#trained-models)
-7. [Acknowledgments](#acknowledgments)
-8. [References](#references)
+<!-- 6. [Trained Models](#trained-models) -->
+6. [Acknowledgments](#acknowledgments)
+7. [References](#references)
 
 ### Requirements
 
