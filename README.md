@@ -208,45 +208,27 @@ $ DeepSpeech/native_client/generate_trie deepspeech-swiss-german/data/alphabet.t
 
 ### Training
 
-Define the path of the corpus and the hyperparameters in _deepspeech-german/train_model.sh_ file.
+Change the path accordingly.
 
 ```
-$ nohup deepspeech-german/train_model.sh &
+$ ./DeepSpeech.py --train_files train.csv --dev_files dev.csv --test_files test.csv --alphabet_config_path alphabet.txt --lm_trie_path trie --lm_binary_path lm.binary --test_batch_size 36 --train_batch_size 24 --dev_batch_size 36 --epochs 75 --learning_rate 0.0001 --dropout_rate 0.25 --export_dir ../models
+```
+
+### Training with Augmentation
+
+Change the path accordingly.
+
+```
+$ ./DeepSpeech.py --train_files train.csv --dev_files dev.csv --test_files test.csv --alphabet_config_path alphabet.txt --lm_trie_path trie --lm_binary_path lm.binary --test_batch_size 36 --train_batch_size 24 --dev_batch_size 36 --epochs 75 --learning_rate 0.0001 --dropout_rate 0.25 --export_dir ../models AUG_AUDIO="--data_aug_features_additive 0.2 --data_aug_features_multiplicative 0.2 --augmentation_speed_up_std 0.2"  AUG_FREQ_TIME="--augmentation_freq_and_time_masking --augmentation_freq_and_time_masking_freq_mask_range 5 --augmentation_freq_and_time_masking_number_freq_masks 3 --augmentation_freq_and_time_masking_time_mask_range 2 --augmentation_freq_and_time_masking_number_time_masks 3" AUG_PITCH_TEMPO="--augmentation_pitch_and_tempo_scaling --augmentation_pitch_and_tempo_scaling_min_pitch 0.95 --augmentation_pitch_and_tempo_scaling_max_pitch 1.2 --augmentation_pitch_and_tempo_scaling_max_tempo 1.2" AUG_SPEC_DROP="--augmentation_spec_dropout_keeprate 0.2"
 ```
 
 
 ### Results
 
 Some results from our findings.
-
-- 
+- English -> German -> Swiss : 56.6
 
 _NOTE: Refer our paper for more information._
-
-### Transfer Learning
-
-**1. _German to German_**
-
-- Specify the checkpoint directory in [trasfer_model.sh](https://github.com/AASHISHAG/deepspeech-german/blob/master/transfer_model.sh)
-
-```
-$ nohup deepspeech-german/trasfer_model.sh & 
-```
-
-**2. _English to German_**
-
-- Change all umlauts characters ä,ö,ü,ß to ae, oe, ue, ss
-- Re-build Language Model, Trie and Corpus
-
-- Specify the checkpoint directory in [trasfer_model.sh](https://github.com/AASHISHAG/deepspeech-german/blob/master/transfer_model.sh)
-
-```
-$ nohup deepspeech-german/trasfer_model.sh & 
-```
-
-_NOTE: The checkpoints should be from the same version to perform Transfer Learning_
-
-
 
 ## Acknowledgments
 * [Prof. Dr.-Ing. Torsten Zesch](https://www.ltl.uni-due.de/team/torsten-zesch) - Co-Author
