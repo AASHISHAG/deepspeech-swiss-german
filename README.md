@@ -11,7 +11,7 @@ This project aims to develop a working Speech to Text module using [Mozilla Deep
 
 ## Important Links:
 
-**Paper:** 
+**Paper:** https://www.researchgate.net/publication/342338332_LTL-UDE_at_Low-Resource_Speech-to-Text_Shared_Task_Investigating_Mozilla_DeepSpeech_in_a_low-resource_setting
 
 **DeepSpeech-API:** https://github.com/AASHISHAG/DeepSpeech-API
 
